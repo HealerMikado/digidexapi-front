@@ -8,8 +8,8 @@ import axios from "axios";
 function DigimonDetail({ id_digimon }) {
     const { id } = useParams();
     const [digimon, setDigimon] = React.useState(null);
-    const url = process.env.REACT_APP_API_URL +"/digimon/"+ id;
     React.useEffect(() => {
+        const url = process.env.REACT_APP_API_URL +"/digimon/"+ id;
         axios.get(url).then((response) => {
             setDigimon(response.data);
         });
@@ -18,7 +18,7 @@ function DigimonDetail({ id_digimon }) {
     return (
         <>
             <h2>{digimon.name}</h2>
-            <img src={digimon.image_href} />
+            <img src={digimon.image_href} alt={digimon.name} />
             <p>Release date : {digimon.release_date}</p>
             <h3>Description</h3>
             <ul>
