@@ -6,9 +6,9 @@ import axios from "axios";
 
 
 function DigimonDetail({ id_digimon }) {
-    const { id } = useParams();
     const [digimon, setDigimon] = React.useState(null);
     React.useEffect(() => {
+        const { id } = useParams();
         const url = process.env.REACT_APP_API_URL +"/digimon/"+ id;
         axios.get(url).then((response) => {
             setDigimon(response.data);
