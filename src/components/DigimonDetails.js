@@ -7,13 +7,13 @@ import axios from "axios";
 
 function DigimonDetail({ id_digimon }) {
     const [digimon, setDigimon] = React.useState(null);
+    const { id } = useParams();
     React.useEffect(() => {
-        const { id } = useParams();
         const url = process.env.REACT_APP_API_URL +"/digimon/"+ id;
         axios.get(url).then((response) => {
             setDigimon(response.data);
         });
-    }, []);
+    });
     if (!digimon) return null;
     return (
         <>
