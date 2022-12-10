@@ -28,4 +28,4 @@ jobs:
           aws-region: eu-west-3
 
       - name: Deploy to S3 bucket
-        run: aws s3 sync ./build/ s3://digimon-site-17112022 --delete
+        run: aws s3 sync ./build/ s3://production-digidexapi-digidexapifrontdigidexapifr-1ft81wevk5oil --delete

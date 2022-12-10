@@ -13,6 +13,7 @@ class App extends Component {
                 <Router>
                     <Routes>
                         <Route exact path="/" element={<DigimonMasonry />} />
+                        <Route path="/search" element={<DigimonMasonry />} />
                         <Route path="/digimon/:id" element={<DigimonDetail />} />
                     </Routes>
                 </Router>   
